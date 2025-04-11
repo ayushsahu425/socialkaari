@@ -4754,6 +4754,9 @@ input:focus {
   line-height: 28px;
   padding-top: 4px;
 }
+.about2-card-left__item-content-desc span{
+  color: var(--theme);
+}
 .about2-card__thumb img {
   max-width: 100%;
 }
