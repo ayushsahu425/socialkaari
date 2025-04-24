@@ -7180,6 +7180,21 @@ input:focus {
 .contact2-input__form textarea {
   padding-bottom: 0;
 }
+
+
+.contact2-input__form-control .select{
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+
+
+
+
 .contact2-input__btn {
   display: inline-block;
   margin-top: 30px;
@@ -9404,7 +9419,7 @@ input:focus {
 .footer2-top__text {
   color: var(--white);
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 500;
   line-height: 32px;
