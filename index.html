@@ -109,7 +109,7 @@
             <button class="global-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
                 <a href='#'>
-                    <img src="assets/images/SOCIALLKARILOGO.png" alt="socialkaari">
+                    <img src="assets/images/SOCIALLKARILOGO.png" alt="socialkaari" height="100px" width="270px">
                 </a>
             </div>
             <nav class="global-mobile-menu">
@@ -156,10 +156,29 @@
                         <div class="col-auto">
                             <div class="header-logo">
                                 <a href='#'>
-                                    <img src="assets/images/SOCIALLKARILOGO.png" alt="Socialkaari" height="100px" width="220px">
+                                    <img src="assets/images/SOCIALLKARILOGO.png" alt="Socialkaari" id="socialkaari-logo">
                                 </a>
                             </div>
                         </div>
+
+                     <style>
+/* Default image size for larger screens */
+#socialkaari-logo {
+    height: 100px;
+    width: 220px;
+}
+
+/* Media query for mobile devices (adjust the max-width as needed) */
+@media (max-width: 767px) {
+    #socialkaari-logo {
+        height: 80px;
+        width: 130px;
+    }
+}
+</style>
+
+
+
                         <div class="col-auto">
                             <nav class="global-header-menu-area-main-menu d-none d-xl-inline-block">
                                 <ul>
