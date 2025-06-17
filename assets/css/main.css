@@ -5650,6 +5650,12 @@ input:focus {
   width: 100%;
   border-radius: 20px;
 }
+
+.project2-card__thumb .vid {
+  height: 500px;
+  width: 100px;
+  border-radius: 20px;
+}
 .project2-card__thumb-icon {
   position: absolute;
   left: 50%;
