@@ -461,12 +461,13 @@ span a {
   color: var(--theme);
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
+  padding-top: 2cm;
 }
 @media (max-width: 450px) {
   .section-title2__subtitle {
@@ -4535,69 +4536,136 @@ input:focus {
 
 /* 15.Services */
 .service1-card {
-  padding: 40px;
-  border-radius: 0px 20px 0px 0px;
-  border-top: 1px solid var(--gray1);
-  border-right: 1px solid var(--gray1);
-}
-@media (max-width: 450px) {
-  .service1-card {
-    padding: 30px 16px;
-  }
-}
-.service1-card__title {
-  position: relative;
-  color: var(--title);
-  font-family: "Outfit", sans-serif;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 41.76px;
-  letter-spacing: -0.72px;
-  margin-left: 90px;
-  margin-bottom: 20px;
-}
-@media (max-width: 1399px) {
-  .service1-card__title {
-    font-size: 28px;
-    line-height: 36px;
-  }
-}
-@media (max-width: 450px) {
-  .service1-card__title {
-    margin-left: 0;
-  }
-}
-.service1-card__title:before {
-  position: absolute;
-  content: "";
-  top: 20px;
-  left: -90px;
-  width: 70px;
-  height: 2px;
-  background-color: var(--title);
-}
-@media (max-width: 450px) {
-  .service1-card__title:before {
-    display: none;
-  }
-}
-.service1-card__desc {
-  color: var(--text);
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 32px;
-  margin-bottom: 35px;
-}
-@media (max-width: 450px) {
-  .service1-card__desc {
-    font-size: 16px;
-    line-height: 28px;
-  }
+    padding: 40px;
+    border-radius: 0px 20px 0px 0px;
+    border-top: 1px solid var(--gray1);
+    border-right: 1px solid var(--gray1);
+    margin-left: 10px;
+    position: relative; /* Essential for overlay positioning */
+    overflow: hidden; /* Hide overflowing content */
 }
 
+@media (max-width: 450px) {
+    .service1-card {
+        padding: 30px 16px;
+    }
+}
+
+
+.service1-card1 {
+    padding: 40px;
+    border-radius: 0px 20px 0px 0px;
+    border-top: 1px solid var(--gray1);
+    border-right: 1px solid var(--gray1);
+    margin-left: 10px;
+   align-items: center;
+    position: relative; /* Essential for overlay positioning */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+@media (max-width: 450px) {
+    .service1-card1 {
+        padding: 30px 16px;
+    }
+}
+
+
+.service1-card__title {
+    position: relative;
+    color: var(--title);
+    font-family: "Outfit", sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 41.76px;
+    letter-spacing: -0.72px;
+    margin-left: 90px;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease; /* Smooth transition for text */
+}
+
+@media (max-width: 1399px) {
+    .service1-card__title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+@media (max-width: 450px) {
+    .service1-card__title:before {
+        display: none;
+    }
+}
+.service1-card__title:before {
+    position: absolute;
+    content: "";
+    top: 20px;
+    left: -90px;
+    width: 70px;
+    height: 2px;
+    background-color: var(--title);
+}
+
+.service1-card__desc {
+    color: var(--text);
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 35px;
+}
+
+@media (max-width: 450px) {
+    .service1-card__desc {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+/* Updated CSS for image hover effect */
+.service1-card a {
+    position: relative; /* To position the overlay relative to the anchor */
+    display: block; /* Make the anchor fill the card */
+    height: 100%; /* Ensure the anchor takes full height */
+}
+
+.service1-card__content {
+    transition: opacity 0.3s ease; /* Smooth transition for hiding text */
+}
+
+.service1-card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Cover the entire card area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth transition for overlay */
+    z-index: 1; /* Ensure overlay is above content */
+    /* This is where the JavaScript will set the background-image using a custom property */
+    background-image: var(--card-bg-image); 
+}
+
+.service1-card:hover .service1-card__content {
+    opacity: 0; /* Hide the text by making it transparent */
+}
+
+.service1-card:hover .service1-card__overlay {
+    opacity: 1; /* Show the overlay on hover */
+}
+
+.service1-card .checklist {
+    transition: opacity 0.3s ease; /* Smooth transition for checklist items */
+}
+
+/* Hide checklist items on hover */
+.service1-card:hover .checklist {
+    opacity: 0;
+}
 /* 16.About */
 .about1-title-thumb {
   border-radius: 20px;
@@ -5081,13 +5149,16 @@ input:focus {
 .achievement2-title {
   color: var(--title);
   font-family: "Outfit", sans-serif;
-  font-size: 80px;
+  font-size: 55px;
   font-style: normal;
   font-weight: 600;
   line-height: 91.12px;
   letter-spacing: -3.2px;
   text-align: center;
   padding-bottom: 60px;
+}
+.title-color{
+  color: #E44F39;
 }
 @media (max-width: 1199px) {
   .achievement2-title {
@@ -5841,7 +5912,7 @@ input:focus {
 
 /* 21.FAQ */
 .faq2-main-content .accordion .global-accordion-item .global-accordion-header {
-  margin: 0;
+  margin: 10px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -7196,6 +7267,13 @@ input:focus {
 }
 .contact2-input__form textarea {
   padding-bottom: 0;
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+
 }
 
 
@@ -7237,7 +7315,7 @@ input:focus {
 .contact2-content__title {
   color: var(--title);
   font-family: "Outfit", sans-serif;
-  font-size: 80px;
+  font-size: 60px;
   font-style: normal;
   font-weight: 600;
   line-height: 91.12px;
@@ -7281,7 +7359,7 @@ input:focus {
   max-width: 600px;
   height: 270px;
   border-radius: 20px;
-  filter: grayscale(100%) invert(7%) contrast(83%);
+  /* filter: grayscale(100%) invert(7%) contrast(83%); */
 }
 .contact2-content__map iframe {
   width: 100%;
@@ -7753,7 +7831,28 @@ input:focus {
   margin-bottom: 20px;
 }
 .partner2-logo-slider1__item {
-  text-align: center;
+    text-align: center; /* Existing style */
+
+    /* Add these styles for the border/box */
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #e0e0e0; /* Light grey border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px; /* Spacing inside the box, around the logo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    display: flex; /* Ensures content (image) can be centered vertically */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 180px; /* Example fixed height for the item, adjust as needed */
+    width: 180px; /* Example fixed width for the item, adjust as needed */
+    /* Adjust height and width based on your desired card size for the 150x150px images
+       (150px image + 2*15px padding = 180px) */
+}
+
+/* Optional: If you want the images to fit within the new padded box without distortion */
+.partner2-logo-slider1__item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the image scales down to fit while maintaining aspect ratio */
 }
 .partner2-logo-slider2__item {
   text-align: center;
@@ -7933,7 +8032,7 @@ input:focus {
 .testimonial2-slider__item-content-text {
   color: var(--white);
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 32px;

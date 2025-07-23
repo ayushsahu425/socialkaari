@@ -1,0 +1,221 @@
+/* Custom font for better resemblance */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+       
+
+       
+ /* Custom orange color */
+       
+        /* Main Section Container */
+        .main-section-container {
+            max-width: 1280px; /* max-w-7xl */
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 2rem;    /* py-8 */
+            padding-bottom: 2rem; /* py-8 */
+            margin-bottom: 1rem;  /* mb-4 for all sections except the very last one handled by body padding */
+        }
+
+        /* Responsive padding for main section container */
+        @media (min-width: 768px) { /* md */
+            .main-section-container {
+                padding-top: 4rem;    /* md:py-16 */
+                padding-bottom: 4rem; /* md:py-16 */
+            }
+        }
+
+        /* Flex Container for Left and Right Sections */
+        .flex-container {
+            display: flex;
+            flex-direction: column; /* flex-col */
+            align-items: center;    /* items-center */
+            gap: 2rem;              /* gap-8 */
+        }
+
+        /* Responsive flex direction and alignment for flex-container */
+        @media (min-width: 1024px) { /* lg */
+            .flex-container {
+                flex-direction: row;    /* lg:flex-row */
+                align-items: flex-start; /* lg:items-start */
+                gap: 4rem;              /* lg:gap-16 */
+            }
+        }
+
+        /* Left Section (Text Content) */
+        .left-section {
+            width: 100%; /* w-full */
+            text-align: center; /* text-center */
+        }
+
+        /* Responsive width and text alignment for left-section */
+        @media (min-width: 1024px) { /* lg */
+            .left-section {
+                width: 50%; /* lg:w-1/2 */
+                text-align: left; /* lg:text-left */
+            }
+        }
+
+        .left-section p:first-child { /* Content Creation text */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 600;    /* font-semibold */
+            color: #4b5563;      /* text-gray-600 */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+
+        .left-section h1 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700;    /* font-bold */
+            color: #1a202c;      /* text-gray-900 */
+            line-height: 1.25;   /* leading-tight */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+
+        /* Responsive font sizes for h1 */
+        @media (min-width: 640px) { /* sm */
+            .left-section h1 {
+                font-size: 2.25rem; /* sm:text-4xl */
+            }
+            .left-section h1 br.hidden-on-small-screens { /* hidden sm:inline */
+                display: inline;
+            }
+        }
+        @media (min-width: 768px) { /* md */
+            .left-section h1 {
+                font-size: 3rem; /* md:text-5xl */
+            }
+        }
+
+        .left-section p:last-child { /* As a forward-thinking agency... text */
+            font-size: 1rem;       /* text-base */
+            color: #374151;        /* text-gray-700 */
+            line-height: 1.625;    /* leading-relaxed */
+            max-width: 36rem;      /* max-w-xl */
+            margin-left: auto;     /* mx-auto */
+            margin-right: auto;    /* mx-auto */
+        }
+
+        /* Responsive margin for last paragraph in left-section */
+        @media (min-width: 1024px) { /* lg */
+            .left-section p:last-child {
+                margin-left: 0; /* lg:mx-0 */
+                margin-right: 0; /* lg:mx-0 */
+            }
+        }
+
+        /* Right Section (Image/Video Cards) - Carousel on small screens, Grid on large */
+        .right-section-cards {
+            width: 80%; /* Adjusted to 80% for smaller images on mobile */
+            margin: 0 auto; /* Centered on mobile */
+            position: relative; /* For absolute positioning of dots */
+            overflow: hidden; /* Hide overflowing cards */
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+
+        /* Carousel Track for sliding */
+        .carousel-track {
+            display: flex; /* Arrange cards in a row */
+            transition: transform 1.2s ease-in-out; /* Slower animation speed (changed from 0.8s to 1.2s) */
+            gap: 1.5rem; /* Added gap for spacing between cards */
+        }
+
+        /* Individual Card Styling within carousel */
+        .card {
+            position: relative;
+            background-color: #fff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transform: scale(1);
+            transition-property: transform;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0; /* Prevent cards from shrinking */
+            width: 100%; /* Each card takes 100% of the visible viewport width */
+            /* Removed margin-right here, replaced by gap on carousel-track */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* hover:scale-105 */
+        }
+
+        .card img {
+            width: 100%; /* w-full */
+            height: auto; /* h-auto */
+            object-fit: cover; /* object-cover */
+        }
+
+        /* Logo/Text Overlay on Card */
+        .card-overlay {
+            position: absolute; /* absolute */
+            top: 0.75rem; /* top-3 */
+            left: 0.75rem; /* left-3 */
+            background-color: rgba(255, 255, 255, 0.8); /* bg-white bg-opacity-80 */
+            padding: 0.5rem 0.75rem; /* px-2 py-1 */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.75rem; /* text-xs */
+            font-weight: 600; /* font-semibold */
+            color: #1f2937; /* text-gray-800 */
+            display: flex; /* flex */
+            align-items: center; /* items-center */
+        }
+
+        .card-overlay img {
+            display: inline-block; /* inline-block */
+            width: 1rem; /* w-4 */
+            height: 1rem; /* h-4 */
+            margin-right: 0.25rem; /* mr-1 */
+        }
+
+        /* Carousel Navigation Dots */
+        .carousel-dots {
+            display: flex; /* flex */
+            justify-content: center; /* justify-center */
+            margin-top: 1rem; /* mt-4 */
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .dot {
+            height: 0.75rem; /* h-3 */
+            width: 0.75rem; /* w-3 */
+            background-color: #d1d5db; /* bg-gray-300 */
+            border-radius: 50%; /* rounded-full */
+            margin: 0 0.25rem; /* mx-1 */
+            cursor: pointer; /* cursor-pointer */
+            transition: background-color 0.3s ease; /* transition */
+        }
+
+        .dot.active {
+            background-color: #9ca3af; /* bg-gray-400 */
+        }
+
+        /* Media Query for Larger Screens (lg breakpoint and up) */
+        @media (min-width: 1024px) { /* lg */
+            .right-section-cards {
+                width: 50%; /* Revert to 50% width on large screens */
+                display: grid; /* Revert to grid layout */
+                grid-template-columns: repeat(3, minmax(0, 1fr)); /* lg:grid-cols-3 */
+                gap: 1.5rem; /* gap-6 */
+                overflow: visible; /* Allow content to overflow */
+                margin: 0; /* Remove auto margin on large screens */
+            }
+
+            .carousel-track {
+                display: contents; /* Remove flex behavior, let grid handle layout */
+                width: auto; /* Reset width */
+                transform: translateX(0) !important; /* Ensure no transform */
+                gap: 0; /* Remove gap on larger screens */
+            }
+
+            .card {
+                width: auto; /* Let grid determine width */
+                /* No margin-right here */
+            }
+
+            .carousel-dots {
+                display: none; /* Hide dots on larger screens */
+            }
+        }
